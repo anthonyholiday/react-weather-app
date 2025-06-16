@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react'
 import { fetchWeatherData } from './api'
 import './App.css'
 
+
 function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(null);
+     
+
 
   useEffect(() => {
     fetchWeatherData()

@@ -1,17 +1,17 @@
-const x = document.getElementById("demo");
 function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        console.log("Geolocation is not supported by this browser.")
+    }
 }
 
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-  console.log(position)
+export function showPosition(position) {
+    console.log("Latitude: " + position.coords.latitude + 
+    "\nLongitude: " + position.coords.longitude);
 }
+
+getLocation()
 
 export const fetchWeatherData = () => {
     return fetch("http://api.openweathermap.org/geo/1.0/direct?q=lisboa,PT&limit=1&appid=4f2a20ec1f06401b3d05e13261625633")
