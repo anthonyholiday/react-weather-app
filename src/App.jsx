@@ -13,15 +13,17 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <h1>Weather App</h1>
-      {error && <p className="error">Error: {error}</p>}
-      {weatherData && (
-        <div className="weather-data">
-          <pre>{JSON.stringify(weatherData, null, 2)}</pre>
-        </div>
-      )}
-    </div>
+    <section className="App h-full flex flex-col items-center">
+      <main className="bg-gray-900 p-16 rounded-xl">
+        <h1>🇵🇹 Lisbon</h1>
+        {error && <p className="error">Error: {error}</p>}
+        {weatherData && (
+          <div className="section_weather-card-wrapper">
+            <pre>{JSON.stringify(weatherData, null, 2)}</pre>
+          </div>
+        )}
+      </main>
+    </section>
   )
 }
 

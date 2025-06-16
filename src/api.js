@@ -1,3 +1,18 @@
+const x = document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+  console.log(position)
+}
+
 export const fetchWeatherData = () => {
     return fetch("http://api.openweathermap.org/geo/1.0/direct?q=lisboa,PT&limit=1&appid=4f2a20ec1f06401b3d05e13261625633")
         .then(res => {
@@ -9,7 +24,7 @@ export const fetchWeatherData = () => {
         .then(data => {
             const lat = data[0].lat
             const lon = data[0].lon
-            const weather = fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=4f2a20ec1f06401b3d05e13261625633`)
+            const weather = fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely,hourly,daily&appid=3bef3c5e53663333556ee7731fc82d1c`)
                 .then(res => res.json())
                 .then(data => {
                     return data
@@ -21,3 +36,6 @@ export const fetchWeatherData = () => {
             throw error;
         });
 };
+
+//NEW - https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+//OLD - https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
