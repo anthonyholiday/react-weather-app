@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchWeatherData } from './api'
+import { fetchWeatherData, getEpochDate } from './api'
 import './App.css'
 
 function App() {
@@ -14,10 +14,10 @@ function App() {
 
   return (
     <section className="App h-full flex flex-col items-center">
-      <main className="bg-slate-900 p-16 rounded-xl w-236 h-118">
+      <main className="bg-slate-900 p-16 rounded-xl w-236 h-full">
         {error && <p className="error">Error: {error}</p>}
         {data && (
-          <div className="section_weather-card-wrapper flex flex-col justify-between h-full">
+          <div className="section_weather-card-wrapper flex flex-col justify-between h-full gap-8">
             <h1 className="text-5xl font-bold mb-4">
               {data.location.name}, {data.location.country}
             </h1>
@@ -29,8 +29,8 @@ function App() {
                 <p>Humidity: {data.weather.current.humidity}%</p>
                 <p>Wind Speed: {data.weather.current.wind_speed} m/s</p>
                 <p>UV: {data.weather.current.uvi}</p>
-                <p>Sunrise: {data.weather.current.sunrise}</p>
-                <p>Sunset: {data.weather.current.sunset}</p>
+                <p>Sunrise: {getEpochDate(data.weather.current.sunrise)}</p>
+                <p>Sunset: {getEpochDate(data.weather.current.sunset)}</p>
             </div>
           </div>
         )}
