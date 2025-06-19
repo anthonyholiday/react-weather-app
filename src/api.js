@@ -27,7 +27,7 @@ export const fetchWeatherData = async () => {
         
         // Make both API calls in parallel
         const [weatherResponse, cityResponse] = await Promise.all([
-            fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${coords.lat}&lon=${coords.lon}&units=metric&exclude=minutely,hourly,daily&appid=3bef3c5e53663333556ee7731fc82d1c`),
+            fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${coords.lat}&lon=${coords.lon}&units=metric&exclude=minutely,hourly&appid=3bef3c5e53663333556ee7731fc82d1c`),
             fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${coords.lat}&lon=${coords.lon}&limit=1&appid=3bef3c5e53663333556ee7731fc82d1c`)
         ]);
 
