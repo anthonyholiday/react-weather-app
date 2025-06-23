@@ -14,7 +14,8 @@ function App() {
 
   return (
     <section className="App h-full flex flex-col items-center">
-      <main className="bg-slate-900 p-16 rounded-xl w-236 h-full border border-slate-700">
+      <main className="bg-slate-900 p-16 rounded-xl w-236 h-full border border-slate-700 transform-3d transition ease-in duration-200 hover:border-slate-600"
+            id="weather-card">
         {error && <p className="error">Error: {error}</p>}
         {data && (
           <div className="section_weather-card-wrapper flex flex-col justify-between h-full gap-8">
