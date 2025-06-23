@@ -17,7 +17,7 @@
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
-  perspective: 1000px; /* Creates the 3D depth. A higher number results in a shallower effect */
+  perspective: 2000px; 
 }
 
 .weather-data {

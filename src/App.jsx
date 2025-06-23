@@ -31,8 +31,8 @@ function App() {
       
       // Calculate the rotation angles based on mouse position
       // Multiply by 15 for a stronger tilt effect
-      const rotateX = ((y - centerY) / centerY) * 15; // Tilt on the X-axis (up and down)
-      const rotateY = ((centerX - x) / centerX) * 15; // Tilt on the Y-axis (left and right)
+      const rotateX = ((y - centerY) / centerY) * 5; // Tilt on the X-axis (up and down)
+      const rotateY = ((centerX - x) / centerX) * 5; // Tilt on the Y-axis (left and right)
       
       // Apply the calculated rotation to the card
       card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
@@ -52,13 +52,13 @@ function App() {
       card.removeEventListener('mousemove', handleMouseMove);
       card.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, []); // Empty dependency array means this runs once after component mounts
+  }, []);
 
   return (
     <section className="App h-full flex flex-col items-center">
       <main 
         ref={cardRef}
-        className="bg-slate-900 p-16 rounded-xl w-236 h-full border border-slate-700 transform-3d transition ease-in duration-200 hover:border-slate-600"
+        className="bg-slate-900 p-16 rounded-xl w-236 h-full border border-slate-700 transform-3d transition ease-in duration-200 hover:border-slate-600 hover:scale-101"
         id="weather-card">
         {error && <p className="error">Error: {error}</p>}
         {data && (
