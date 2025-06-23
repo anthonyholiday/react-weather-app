@@ -58,7 +58,7 @@ function App() {
     <section className="App h-full flex flex-col items-center">
       <main 
         ref={cardRef}
-        className="bg-slate-900 p-16 rounded-xl w-236 h-full border border-slate-700 transform-3d transition ease-in duration-200 hover:border-slate-600 hover:scale-101"
+        className="bg-slate-900 p-16 rounded-xl w-236 h-full border border-slate-700 shadow-xl transform-3d transition ease-in duration-200 hover:border-slate-400 hover:scale-101 hover:shadow-2xl"
         id="weather-card">
         {error && <p className="error">Error: {error}</p>}
         {data && (
