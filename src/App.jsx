@@ -69,13 +69,13 @@ function App() {
             <p className="text-8xl">{Math.round(data.weather.current.temp)}°C</p>
             <p className="text-2xl">{data.weather.daily[0].summary}</p>
             <div className="weather-info flex gap-16 w-full justify-between">
-                <p>Feels like: {Math.round(data.weather.current.feels_like)}°C</p>
-                <p>Weather: {data.weather.current.weather[0].description}</p>
-                <p>Humidity: {data.weather.current.humidity}%</p>
-                <p>Wind Speed: {data.weather.current.wind_speed} m/s</p>
-                <p>UV: {data.weather.current.uvi}</p>
-                <p>Sunrise: {getEpochDate(data.weather.current.sunrise)}</p>
-                <p>Sunset: {getEpochDate(data.weather.current.sunset)}</p>
+                <p>Feels like: <strong>{Math.round(data.weather.current.feels_like)}°C</strong></p>
+                <p>Weather: <strong>{data.weather.current.weather[0].description}</strong></p>
+                <p>Humidity: <strong>{data.weather.current.humidity}%</strong></p>
+                <p>Wind Speed: <strong>{data.weather.current.wind_speed} m/s</strong></p>
+                <p>UV: <strong>{data.weather.current.uvi}</strong></p>
+                <p>Sunrise: <strong>{getEpochDate(data.weather.current.sunrise)}</strong></p>
+                <p>Sunset: <strong>{getEpochDate(data.weather.current.sunset)}</strong></p>
             </div>
           </div>
         )}
