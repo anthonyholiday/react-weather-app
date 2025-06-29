@@ -62,7 +62,7 @@ function App() {
         id="weather-card">
         {error && <p className="error">Error: {error}</p>}
         {data && (
-          <div className="section_weather-card-wrapper flex flex-col justify-between h-full gap-8">
+          <div className="section_weather-card-wrapper flex flex-col justify-between h-full gap-16">
             <div>
               <h1 className="text-5xl font-bold mb-4">
                 {data.location.name}, {data.location.country}
