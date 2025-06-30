@@ -62,14 +62,14 @@ function App() {
         id="weather-card">
         {error && <p className="error">Error: {error}</p>}
         {data && (
-          <div className="section_weather-card-wrapper flex flex-col justify-between h-full gap-16">
+          <div className="section_weather-card-wrapper flex flex-col justify-between h-full">
             <div>
-              <h1 className="text-6xl font-bold mb-4">
+              <h1 className="text-5xl font-bold mb-4">
                 {data.location.name}, {data.location.country}
               </h1>
-              <p className="text-8xl">{Math.round(data.weather.current.temp)}°C</p>
+              <p className="text-8xl mb-8">{Math.round(data.weather.current.temp)}°C</p>
             </div>
-            <p className="text-2xl">{data.weather.daily[0].summary}</p>
+            <p className="text-2xl mb-16">{data.weather.daily[0].summary}</p>
             <div className="weather-info flex gap-16 w-full justify-between">
                 <p>Feels like: <strong>{Math.round(data.weather.current.feels_like)}°C</strong></p>
                 <p>Weather: <strong>{data.weather.current.weather[0].description}</strong></p>
