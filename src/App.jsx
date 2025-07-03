@@ -57,11 +57,11 @@ function App() {
 
   return (  
     <>
-    <Tag handle="@anthonyholiday" bgColor="bg-slate-700" textColor="text-white" link="https://github.com/anthonyholiday"/>
+    <Tag handle="@anthonyholiday" bgColor="bg-slate-800" textColor="text-white" link="https://github.com/anthonyholiday"/>
     <section className="App h-full flex flex-col items-center">
       <main 
         ref={cardRef}
-        className="p-16 rounded-xl w-236 h-full border border-slate-700 shadow-xl transform-3d transition ease-in duration-200 hover:border-slate-400 hover:scale-101 hover:shadow-2xl"
+        className="p-16 rounded-xl lg:w-236 sm:w-full h-full border border-slate-700 shadow-xl transform-3d transition ease-in duration-200 hover:border-slate-400 hover:scale-101 hover:shadow-2xl"
         id="weather-card">
         {error && <p className="error">Error: {error}</p>}
         {data && (
@@ -72,8 +72,8 @@ function App() {
               </h1>
               <p className="text-8xl mb-8">{Math.round(data.weather.current.temp)}°C</p>
             </div>
-            <p className="text-2xl mb-16">{data.weather.daily[0].summary}</p>
-            <div className="weather-info flex gap-16 w-full justify-between">
+            <p className="text-2xl lg:mb-16 mb-8">{data.weather.daily[0].summary}</p>
+            <div className="weather-info flex flex-col gap-4 lg:flex-row lg:gap-16 lg:w-full lg:justify-between">
                 <p>Feels like: <strong>{Math.round(data.weather.current.feels_like)}°C</strong></p>
                 <p>Weather: <strong>{data.weather.current.weather[0].description}</strong></p>
                 <p>Humidity: <strong>{data.weather.current.humidity}%</strong></p>
