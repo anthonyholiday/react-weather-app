@@ -57,7 +57,7 @@ function App() {
 
   return (  
     <>
-    <Tag handle="@anthonyholiday" bgColor="bg-slate-700" textColor="text-white" icon=""/>
+    <Tag handle="@anthonyholiday" bgColor="bg-slate-700" textColor="text-white" link="https://github.com/anthonyholiday"/>
     <section className="App h-full flex flex-col items-center">
       <main 
         ref={cardRef}
