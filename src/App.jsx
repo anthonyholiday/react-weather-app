@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { fetchWeatherData, getEpochDate } from './api'
 import './App.css'
+import Tag from "../components/tag.jsx" 
 
 function App() {
   const [data, setData] = useState(null);
@@ -54,7 +55,9 @@ function App() {
     };
   }, []);
 
-  return (
+  return (  
+    <>
+    <Tag handle="@anthonyholiday" bgColor="bg-slate-700" textColor="text-white" icon=""/>
     <section className="App h-full flex flex-col items-center">
       <main 
         ref={cardRef}
@@ -83,6 +86,7 @@ function App() {
         )}
       </main>
     </section>
+    </>
   );
 }
 
