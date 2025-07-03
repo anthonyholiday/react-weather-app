@@ -58,7 +58,7 @@ function App() {
   return (  
     <>
     <Tag handle="@anthonyholiday" bgColor="bg-slate-800" textColor="text-white" link="https://github.com/anthonyholiday"/>
-    <section className="App h-full flex flex-col items-stretch lg:items-center">
+    <section className="App h-auto lg:h-full flex flex-col justify-items-start lg:items-center">
       <main 
         ref={cardRef}
         className="p-8 lg:p-16 rounded-xl lg:w-236 w-full h-full border border-slate-700 shadow-xl transform-3d transition ease-in duration-200 hover:border-slate-400 hover:scale-101 hover:shadow-2xl"
