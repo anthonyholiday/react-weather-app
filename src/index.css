@@ -19,8 +19,8 @@ body {
   margin: 0;
   display: flex;
   place-items: stretch;
-  min-width: 100vw;
-  min-height: 100vh;
+  min-width: 100dvw;
+  min-height: 100dvh;
 }
 
 button {
