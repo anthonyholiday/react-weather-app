@@ -58,10 +58,10 @@ function App() {
   return (  
     <>
     <Tag handle="@anthonyholiday" bgColor="bg-slate-800" textColor="text-white" link="https://github.com/anthonyholiday"/>
-    <section className="App h-full lg:flex lg:flex-col items-center">
+    <section className="App h-full lg:flex lg:flex-col place-items-center justify-center border border-red-400">
       <main 
         ref={cardRef}
-        className="p-8 lg:p-16 rounded-xl lg:w-236 w-full h-full border border-slate-700 shadow-xl transform-3d transition ease-in duration-200 hover:border-slate-400 hover:scale-101 hover:shadow-2xl"
+        className="p-8 lg:p-16 rounded-xl lg:w-236 w-full border border-slate-700 shadow-xl transform-3d transition ease-in duration-200 hover:border-slate-400 hover:scale-101 hover:shadow-2xl"
         id="weather-card">
         {error && <p className="error">Error: {error}</p>}
         {data && (
