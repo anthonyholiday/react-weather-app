@@ -67,7 +67,7 @@ function App() {
         {data && (
           <div className="section_weather-card-wrapper flex flex-col justify-between h-full">
             <div>
-              <h1 className="text-2xl lg:text-5xl font-bold mb-4">
+              <h1 className="text-3xl lg:text-5xl font-bold mb-4">
                 {data.location.name}, {data.location.country}
               </h1>
               <p className="text-5xl lg:text-8xl mb-8">{Math.round(data.weather.current.temp)}°C</p>
